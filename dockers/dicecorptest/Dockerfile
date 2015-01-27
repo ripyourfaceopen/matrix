@@ -1,4 +1,4 @@
-FROM centos
+FROM centos:6
 MAINTAINER Kevin
 RUN yum update -y
 RUN yum install -y \
@@ -20,5 +20,4 @@ ADD matrix /web/matrix/matrix
 ADD rest /web/matrix/rest
 ADD Smarty /usr/lib/php/Smarty
 RUN chown apache /web/ -R
-ENTRYPOINT ["/usr/sbin/httpd"]
-CMD ["-D", "FOREGROUND"]
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
