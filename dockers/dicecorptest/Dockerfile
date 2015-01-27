@@ -7,7 +7,8 @@ RUN yum install -y \
        mod_ssl \
        php-pecl-memcache \
        php-xml \
-       php-gd php-devel
+       php-gd php-devel \
+       php-pecl-redis
 RUN yum clean all
 EXPOSE 80
 RUN rm -rf /etc/httpd/conf.d/default.conf
